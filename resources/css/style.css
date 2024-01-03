@@ -63,6 +63,7 @@ body {
 
 .memes-container div {
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 /* Responsive Grid*/

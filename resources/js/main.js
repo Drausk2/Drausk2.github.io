@@ -93,10 +93,10 @@ function processMeme(memeInfo) {
     // Custom control
     fabric.Object.prototype.set({
         transparentCorners: false,
-        cornerColor: 'yellow',
-        borderColor: 'rgba(88,42,114)',
-        cornerSize: parseInt(canvas.width) * 0.03,
-        cornerStrokeColor: '#000000',
+        cornerColor: 'white',
+        borderColor: 'rgba(79, 128, 255, 1)',
+        cornerSize: parseInt(canvas.width) * 0.017,
+        cornerStrokeColor: 'rgba(79, 128, 255, 1)',
         borderScaleFactor: 2,
         padding: 4,
     });

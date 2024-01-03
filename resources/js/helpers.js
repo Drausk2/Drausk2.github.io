@@ -53,12 +53,13 @@ function isImage(fileType) {
 // Generate a random 6-character name
 function createImgName() {
     var result = '';
+    var prefix = 'TEST';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for (var i = 0; i < 6; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-    return `${result}.png`;
+    return `${prefix}.${result}.png`;
 }
 
 // Show alert message

@@ -169,3 +169,8 @@ canvas {
     top: 0;
     z-index: 99999;
 }
+
+.btn-warning {
+    background-color:rgba(79, 128, 255, 1);
+    color: white;
+}

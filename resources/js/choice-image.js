@@ -26,13 +26,13 @@ $(function () {
     // Prevent default behavior for drag-and-drop
     $(document).on('dragover dragenter', function (e) {
         e.preventDefault();
-        showDropPopup(); // show Popup
+        //showDropPopup(); // show Popup
     });
 
     // Event: Handle drag leave
     $(document).on('dragleave', function (e) {
         e.preventDefault();
-        hideDropPopup(); // hide Popup
+       // hideDropPopup(); // hide Popup
     });
 
     // ...

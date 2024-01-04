@@ -19,7 +19,7 @@ $(function () {
         // Event: Handle dropped image
     $(document).on('drop', function (e) {
         e.preventDefault();
-        hideDropPopup(); // hide Popup
+        //hideDropPopup(); // hide Popup
         handleImageUpload(e.originalEvent.dataTransfer.files[0]);
     });
 

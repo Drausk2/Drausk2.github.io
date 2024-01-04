@@ -69,7 +69,34 @@
         </h1>
       </div>
     </div>
+    <button onclick="change_lang()">Change Language</button>
     <div class="choice-section mt-5">
+    <div class="drop-popup-c">
+      <div class="drop-popup-wrapper">
+        <div class="drop-popup-container">
+          <h1 class="drop-popup-text">
+            <span data-translate="top100"></span>
+            <span class="text-danger"><br><span data-translate="or"></span></span>
+          </h1>
+          <div class="drop-popup-upload-container drop-popup">
+            <div class="drop-popup-border-container">
+              <div class="icons-drop fa-4x">
+                <i class="fas fa-file-image"></i>
+              </div>
+              <input type="file" class="custom-file-input" id="meme-input" />
+              <p>
+                <span data-translate="files1"></span>
+                <label href="#" for="meme-input" id="drop-popup-file-browser"
+                  ><span data-translate="files2"></span></label>
+                  <span data-translate="files3"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="choice-section mt-5">
       <div class="choice text-center mr-auto ml-auto mb-5">
         <div class="d-inline-block mb-2">
           <p class="display-5 mb-0">
@@ -87,7 +114,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div>
         <div class="grid memes-container">
           <div class="grid-sizer"></div>
@@ -373,5 +400,6 @@
     <script src="resources/js/choice-image.js"></script>
     <script src="resources/js/handlers.js"></script>
     <script src="resources/js/main.js"></script>
+    <script src="resources/js/dictionary.js"></script>
   </body>
 </html>

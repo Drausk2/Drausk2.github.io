@@ -1,3 +1,8 @@
+:root{
+
+  --btn-n: rgb(76, 126, 255);
+  --btn-h: rgb(0, 72, 255);
+}
 body {
   font-family: "Lato", sans-serif;
 }
@@ -171,11 +176,6 @@ canvas {
   z-index: 99999;
 }
 
-.btn-warning {
-  background-color: rgba(79, 128, 255, 1);
-  color: white;
-}
-
 a {
   color: black !important ;
   text-decoration: none !important;
@@ -243,4 +243,41 @@ a {
 .icons-drop {
   color: #95afc0;
   opacity: 0.55;
+}
+
+
+.btn-warning {
+  color: white;
+  background-color: var(--btn-n);
+  border-color: var(--btn-n);
+}
+.btn-warning:hover {
+  color: white;
+  background-color: var(--btn-h);
+  border-color: var(--btn-n);
+}
+.btn-warning.focus,
+.btn-warning:focus {
+  color: white;
+  background-color: var(--btn-h);
+  border-color: var(--btn-n);
+  box-shadow: 0 0 0 0.2rem var(--btn-h);
+}
+.btn-warning.disabled,
+.btn-warning:disabled {
+  color: white;
+  background-color: var(--btn-h);
+  border-color: var(--btn-n);
+}
+.btn-warning:not(:disabled):not(.disabled).active,
+.btn-warning:not(:disabled):not(.disabled):active,
+.show > .btn-warning.dropdown-toggle {
+  color: white;
+  background-color: var(--btn-h);
+  border-color: var(--btn-n);
+}
+.btn-warning:not(:disabled):not(.disabled).active:focus,
+.btn-warning:not(:disabled):not(.disabled):active:focus,
+.show > .btn-warning.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--btn-h);
 }

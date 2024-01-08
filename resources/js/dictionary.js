@@ -201,33 +201,35 @@ $(document).ready(function() {
             'zh': '生成表情包',
         }
     };
-var langs = ['en', 'de','es', 'fr', 'it', 'pt', 'ru', 'zh'];
-var langnum = '8';
-var current_lang_index = 0;
-var current_lang = langs[current_lang_index];
-
-window.change_lang = function() {
-    current_lang_index = ++current_lang_index % langnum;
-    current_lang = langs[current_lang_index];
+    var langs = ['en', 'de','es', 'fr', 'it', 'pt', 'ru', 'zh'];
+    var langnum = '8';
+    var current_lang_index = 0;
+    var current_lang = langs[current_lang_index];
+    
+    window.change_lang = function() {
+        current_lang = document.getElementById('lang-select').value;
+        translate();
+    }
+    
+    function translate() {
+        $("[data-translate]").each(function(){
+            var key = $(this).data('translate');
+            $(this).html(dictionary[key][current_lang] || "N/A");
+        });
+    
+        // Save the current language to local storage
+        localStorage.setItem('current_lang', current_lang);
+    }
+    
+    // Check if there is a stored language in local storage
+    if (localStorage.getItem('current_lang')) {
+        current_lang = localStorage.getItem('current_lang');
+    }
+    
+    // Call the translate function to translate the text
     translate();
-}
-
-function translate() {
-    $("[data-translate]").each(function(){
-        var key = $(this).data('translate');
-        $(this).html(dictionary[key][current_lang] || "N/A");
-    });
-
-    // Save the current language to local storage
-    localStorage.setItem('current_lang', current_lang);
-}
-
-// Check if there is a stored language in local storage
-if (localStorage.getItem('current_lang')) {
-    current_lang = localStorage.getItem('current_lang');
-}
-
-// Call the translate function to translate the text
-translate();
+    
+    // Call the change_lang function to initialize the language when the page loads
+    change_lang();
 });
 

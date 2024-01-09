@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var dictionary = {
+    var dictionary = { 
         'top100': {
             'de': 'Wähle aus den top 100 verwendeten Memes',
             'en': 'Select from the top 100 memes frequently used',
@@ -31,7 +31,7 @@ $(document).ready(function() {
             'zh': '将图片拖到这里，或',
         },
         'files2': {
-            'de': 'durchsuchen',
+            'de': 'durchsuche',
             'en': 'browse',
             'es': 'buscar',
             'fr': 'parcourir',
@@ -200,36 +200,38 @@ $(document).ready(function() {
             'ru': 'Сгенерировать мем',
             'zh': '生成表情包',
         }
-    };
-    var langs = ['en', 'de','es', 'fr', 'it', 'pt', 'ru', 'zh'];
-    var langnum = '8';
-    var current_lang_index = 0;
-    var current_lang = langs[current_lang_index];
-    
+     };
+    var langs = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ru', 'zh'];
+    var current_lang = 'en'; // Set a default language
+
+    // Function to change language
     window.change_lang = function() {
         current_lang = document.getElementById('lang-select').value;
         translate();
     }
-    
+
+    // Function to translate content
     function translate() {
-        $("[data-translate]").each(function(){
+        $("[data-translate]").each(function() {
             var key = $(this).data('translate');
             $(this).html(dictionary[key][current_lang] || "N/A");
         });
-    
+
         // Save the current language to local storage
         localStorage.setItem('current_lang', current_lang);
     }
-    
-    // Check if there is a stored language in local storage
-    if (localStorage.getItem('current_lang')) {
-        current_lang = localStorage.getItem('current_lang');
-    }
-    
-    // Call the translate function to translate the text
-    translate();
-    
-    // Call the change_lang function to initialize the language when the page loads
-    change_lang();
-});
 
+// Check if there is a stored language in local storage
+if (localStorage.getItem('current_lang')) {
+    current_lang = localStorage.getItem('current_lang');
+}
+
+// Set the selected option in the language dropdown
+$('#lang-select').find('option[value="' + current_lang + '"]').prop('selected', true);
+
+// Call the translate function to translate the text
+translate();
+
+    // Bind the change_lang function to the change event of the language selection element
+    $('#lang-select').on('change', change_lang);
+});
